@@ -29,6 +29,9 @@ namespace RevitAPILab_7_1_CreateSheets
             //vm.ShowRequest += (s, e) => this.Show();
             vm.CloseRequest += (s, e) => this.Close();
             DataContext = vm;
+            //Grid viewGrid = ViewGrid;
+           
+
         }
     }
 }

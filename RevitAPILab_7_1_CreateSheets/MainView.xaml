@@ -5,19 +5,33 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RevitAPILab_7_1_CreateSheets"
              mc:Ignorable="d" 
-             Height="250" MinHeight="250"  Width="300"
-             Title="Расстановка мебели">
+             Height="250" MinHeight="310"  Width="300"
+             Title="Создать листы">
     <StackPanel>
         <Label Content="Выбрать основную надпись"/>
         <ComboBox ItemsSource="{Binding TitleBlockTypes}"
-                  SelectedValue="{Binding SelectedTytleBlockType}"
+                  SelectedValue="{Binding SelectedTitleType}"
+                  DisplayMemberPath="Name"
+                  Margin="5"/>
+        <Label Content="Выбрать вид для вставки"/>
+        <ComboBox ItemsSource="{Binding Views}"
+                  SelectedValue="{Binding SelectedView}"
                   DisplayMemberPath="Name"
                   Margin="5"/>
         <Label Content="Указать количество листов"/>
         <TextBox Text="{Binding Quantity}" Margin="5"/>
+        <Label Content="Разработал:"/>
+        <TextBox Text="{Binding Designer}" Margin="5"/>
         <Button Content="Создать"
                 Command="{Binding SaveCommand}"
                 Height="40"
                 Margin="5"/>
+        <!--<Grid x:Name="ViewGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+        </Grid>-->
     </StackPanel>
 </Window>
